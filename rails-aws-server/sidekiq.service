@@ -1,0 +1,25 @@
+[Unit]
+Description=sidekiq
+After=syslog.target network.target
+
+
+[Service]
+Type=simple
+WorkingDirectory=/home/deployer/appname/current
+EnvironmentFile=/home/deployer/.app
+ExecStart=/bin/bash -lc 'bundle exec sidekiq -e production'
+User=deployer
+Group=deployer
+UMask=0002
+
+RestartSec=1
+Restart=on-failure
+
+# output goes to /var/log/syslog
+StandardOutput=syslog
+StandardError=syslog
+
+SyslogIdentifier=sidekiq
+
+[Install]
+WantedBy=multi-user.target
