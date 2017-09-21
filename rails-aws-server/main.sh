@@ -60,6 +60,10 @@ bash --login
 gem install unicorn -v 5.1.0
 gem install bundler -v 1.13.2
 
+npm install -g mjml@3.3.3
+
+sudo apt-get install imagemagick
+
 # 7. CONFIGURE SSH ACCESS
 
 # Login as deployer
