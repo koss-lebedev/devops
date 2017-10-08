@@ -10,6 +10,9 @@ sudo vi /etc/sudoers
 # Below sudo, add:
 # deployer        ALL=(ALL:ALL) ALL
 
+# To all password-less sudo commands used by Capistrano
+deployer ALL=(ALL) NOPASSWD: ALL
+
 # Switch to new user
 su deployer
 
